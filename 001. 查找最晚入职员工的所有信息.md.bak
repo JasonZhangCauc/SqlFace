@@ -25,16 +25,10 @@ PRIMARY KEY (`emp_no`));
 ´ð°¸:
 -----
 ```sql
-SELECT *
-FROM employees
-WHERE hire_date = (
-	SELECT MAX(hire_date)
-	FROM employees
-);
-»ò
-SELECT *
-FROM employees
-ORDER BY hire_date DESC
-LIMIT 0, 1;
+select * from employees where hire_date = (SELECT MAX(hire_date) FROM
+employees);
 
+»ò
+
+SELECT * FROM employees ORDER BY hire_date DESC LIMIT 0,1;
 ```
